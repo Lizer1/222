@@ -69,6 +69,11 @@ client.on('message', msg => {
   }
 });
 
+	  client.on('message', msg => {
+  if (msg.content === 'رابط') {
+    msg.reply('**https://discord.gg/RVEWHjV**');
+  }
+});
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -817,43 +822,6 @@ client.on('message', message => {
 
 
 
-
-
-
-
-
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('.com')){
-      if(!message.member.hasPermission('MANAGE_MESSAGE'))
-        message.delete()
-    return message.reply(`**Don't Share Links Plz ❌**`)
-    }
-});
-
-
-
-
-
-
-client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
-
-  message.channel.createInvite({
-        thing: true,
-        maxUses: 10,
-        maxAge: 86400
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-  message.channel.send("**تم ارسال الرابط برسالة خاصة**")
-
-message.author.send(`**مدة الرابط : يـوم
-عدد استخدامات الرابط : 2**`)
-
-
-    }
-});
 
 
 
